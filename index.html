@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111116">
+  <title>Gym Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div>
+      <div class="logo">GYM<span>•</span>TRACK</div>
+      <div id="todayDate" class="date"></div>
+    </div>
+    <div id="dayBadge" class="day-badge"></div>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section id="home" class="page active">
+      <div class="hero-card">
+        <p class="small-label">TODAY'S WORKOUT</p>
+        <h1 id="todayTitle">Loading...</h1>
+        <p id="todaySubtitle"></p>
+      </div>
+
+      <div id="homeWorkout"></div>
+    </section>
+
+
+    <!-- WEEK -->
+    <section id="week" class="page">
+      <div class="section-head">
+        <div>
+          <p class="small-label">HISTORY</p>
+          <h2>Weekly History</h2>
+        </div>
+      </div>
+
+      <div id="weekList"></div>
+    </section>
+
+
+    <!-- ROUTINE -->
+    <section id="routine" class="page">
+      <div class="section-head">
+        <div>
+          <p class="small-label">CUSTOMIZE</p>
+          <h2>Your Routine</h2>
+        </div>
+      </div>
+
+      <div class="notice">
+        Each exercise is <b>2 sets × 8 reps</b>.
+        Monday/Thursday, Tuesday/Friday and Wednesday/Saturday share the same routine.
+      </div>
+
+      <div id="routineEditor"></div>
+    </section>
+
+
+    <!-- PROGRESS -->
+    <section id="progress" class="page">
+      <div class="section-head">
+        <div>
+          <p class="small-label">YOUR DATA</p>
+          <h2>Progress</h2>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span id="statWorkouts">0</span>
+          <small>Workouts</small>
+        </div>
+
+        <div class="stat-card">
+          <span id="statSets">0</span>
+          <small>Sets Done</small>
+        </div>
+
+        <div class="stat-card">
+          <span id="statDays">0</span>
+          <small>Active Days</small>
+        </div>
+
+        <div class="stat-card">
+          <span id="statStreak">0</span>
+          <small>Current Streak</small>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Recent Activity</h3>
+        <div id="recentActivity"></div>
+      </div>
+    </section>
+
+
+    <!-- SETTINGS -->
+    <section id="settings" class="page">
+      <div class="section-head">
+        <div>
+          <p class="small-label">APP</p>
+          <h2>Settings</h2>
+        </div>
+      </div>
+
+      <div class="card setting-card">
+        <h3>Backup Your Data</h3>
+        <p>
+          Save your routine and workout history as a file.
+        </p>
+        <button class="primary-btn" id="backupBtn">
+          Export Backup
+        </button>
+      </div>
+
+      <div class="card setting-card">
+        <h3>Restore Data</h3>
+        <p>
+          Restore a previously saved backup file.
+        </p>
+
+        <label class="file-btn">
+          Choose Backup File
+          <input type="file" id="restoreFile" accept=".json">
+        </label>
+      </div>
+
+      <div class="card setting-card">
+        <h3>About</h3>
+        <p>Gym Tracker — personal workout tracking.</p>
+        <p class="muted">
+          Your data is stored locally on this device/browser.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+
+    <button class="nav-btn active" data-page="home">
+      <span>⌂</span>
+      <small>Home</small>
+    </button>
+
+    <button class="nav-btn" data-page="week">
+      <span>▦</span>
+      <small>Week</small>
+    </button>
+
+    <button class="nav-btn" data-page="routine">
+      <span>☷</span>
+      <small>Routine</small>
+    </button>
+
+    <button class="nav-btn" data-page="progress">
+      <span>↗</span>
+      <small>Progress</small>
+    </button>
+
+    <button class="nav-btn" data-page="settings">
+      <span>⚙</span>
+      <small>Settings</small>
+    </button>
+
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
